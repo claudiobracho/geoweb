@@ -7,3 +7,9 @@ body {
     width: 100%;
     background-color: #ffffff
 }
+
+.title{position: absolute; border:solid;  top: 5px;
+    width: auto; z-index:1000; background-color: #a3a8adc4;
+    color: #192771; font-size: x-large; left: 100px;
+    font-family: fantasy;
+}
