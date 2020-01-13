@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox estilo</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+        //Añadir vuestor token y vuestro estilo
+        function init() {
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiY2xhdWRpb2FiZSIsImEiOiJjazVjbzd6NGExc3I0M3VwYTFyZjJydHUzIn0.4tPuaUgmAhnR8Bb7MrJdHw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/claudioabe/ck5cqmbd7033y1en32bpxumwv',
+                center: [2.16859, 41.3954],
+                zoom: 13,
+                attributionControl: false,
+                pitch: 45,
+                hash:true
+            });
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="map"></div>
+</body>
+
+</html>  
