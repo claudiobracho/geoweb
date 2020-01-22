@@ -1,51 +1,39 @@
 <html>
-
-    <head>
-    <meta charset='utf-8' />
-    <title>Edificios</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
-    <link href='css/estilobase.css' rel='stylesheet' />
-    <script src='js/utils.js'></script>
-    <script src='js/edificios.js'></script>
-    <script>
-        //Añadir vuestor token y/o estilo !!
-        var map;
-        function init() {
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoiY2xhdWRpb2FiZSIsImEiOiJjazVjbzd6NGExc3I0M3VwYTFyZjJydHUzIn0.4tPuaUgmAhnR8Bb7MrJdHw';
-             map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/claudioabe/ck5msd0oq13rt1inp45icj4za',
-                center: [2.16859, 41.3954],
-                zoom: 15,
-                attributionControl: false,
-                pitch: 45,
-                hash: true
-            });
-
-            map.addControl(new mapboxgl.AttributionControl({ compact: true }));
-            map.addControl(new mapboxgl.NavigationControl());
-
-            map.on('load', function () {
-
-                addEdificiosCapa();
-
-                addPopupToMap("edificios");
-             }); //fin onload
-
-        } // final init
-    </script>
-    </head>
-
-    <body onload="init()">
-    <div class="panelTopIzquierda">
-        <h5>Altura edificios</h5>
-        <label id="altura">Altura superior a 0 m</label>
-        <input id="slider" type="range" min="1" max="110" step="5" value="0" />
-    </div>
-    <div id="map"></div>
-    </body>
-
-    </html>
+        <head>
+        <meta charset='utf-8' />
+        <title>Edificios</title>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+        <link href='css/estilobase.css' rel='stylesheet' />
+        <script src='js/utils.js'></script>
+        <script src='js/edificios.js'></script>
+        <script>
+            //Añadir vuestor token y/o estilo !!
+            var map;
+            function init() {
+                mapboxgl.accessToken =
+                    'pk.eyJ1IjoiY2xhdWRpb2FiZSIsImEiOiJjazVjbzd6NGExc3I0M3VwYTFyZjJydHUzIn0.4tPuaUgmAhnR8Bb7MrJdHw';
+                 map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/claudioabe/ck5msd0oq13rt1inp45icj4za',
+                    center: [2.16859, 41.3954],
+                    zoom: 15,
+                    attributionControl: false,
+                    pitch: 45,
+                    hash: true
+                });
+    
+                map.addControl(new mapboxgl.AttributionControl({ compact: true }));
+                map.addControl(new mapboxgl.NavigationControl());
+    
+            } // final init
+        </script>
+        </head>
+    
+        <body onload="init()">
+    
+            <div id="map"></div>
+        </body>
+    
+        </html>
