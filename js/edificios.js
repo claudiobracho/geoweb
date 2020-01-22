@@ -6,14 +6,20 @@ function addEdificiosCapa() {
 
     }); //fin map source
 
+    function filtrarEdificios(valor) {
+        map.setFilter("edificios", [">", "numberOfFloorsAboveGround", parseInt(valor)]);
+
+        document.getElementById("altura").innerHTML = "Altura superior a " + valor + "m.";
+
+    }
 
     map.addLayer({
     "id": "edificios",
     "type": "fill-extrusion",
     "source": "edificios_source",
     "source-layer": "castelldefelscapa2-3d6r0i", // Nuestro nombre Tileset
-    "maxzoom": 21,
-    "minzoom": 15,
+    "maxzoom": 50,
+    "minzoom": 10,
    // "filter": [">", "numberOfFloorsAboveGround", 0],
     "paint": {
         "fill-extrusion-color": [
